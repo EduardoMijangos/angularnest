@@ -23,24 +23,8 @@ export class HomeComponent implements OnInit {
 
     this.taskService.getTaskByUserId(this.email).subscribe(data =>{
       console.log('estos son las tasks',data);
+      this.tasks = data;
     })
-    // this.authService.getCurrentUserId().subscribe(
-    //   (userId: number) => {
-    //     this.email = userId;
-    //     this.taskService.getTaskByUserId(this.idUser).subscribe(
-    //       (data: TaskReceived[]) => {
-    //         this.tasks = data;
-    //         console.log('Tareas del id', this.idUser, this.tasks);
-    //       },
-    //       (error: any) => {
-    //         console.error('Error al obtener las tareas:', error);
-    //       }
-    //     );
-    //   },
-    //   (error: any) => {
-    //     console.error('Error al obtener el ID de usuario:', error);
-    //   }
-    // );
   }
 
   logout() {
